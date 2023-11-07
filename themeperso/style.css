@@ -5,4 +5,105 @@
  Author:       Me
  Author URI:   https://elementor.com
  Version:      1.0.0
-*//*# sourceMappingURL=style.css.map */
+*/
+.logo {
+  float: left; /* Alignez le logo à gauche */
+  margin-right: 20px; /* Ajoutez un espacement à droite du logo si nécessaire */
+}
+
+.logo img {
+  margin-left: 175px;
+  margin-top: 15px;
+}
+
+.main-menu {
+  float: left;
+}
+
+.menu {
+  position: fixed;
+  top: 0px;
+}
+
+.admin-bar .menu {
+  top: 35px; /* on prend en compte le décalage */
+  right: 150px;
+}
+
+/* Logo */
+.site-branding {
+  position: absolute;
+  margin-top: 9px;
+  margin-left: 500px;
+}
+
+/* Menu */
+/* Styles pour aligner le menu à droite */
+nav[role=navigation] {
+  margin-top: 50px;
+  margin-left: 58%;
+  font-family: Space Mono;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+nav[role=navigation] a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Styles pour les éléments du menu */
+nav[role=navigation] ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav[role=navigation] ul li {
+  display: inline-block;
+  margin-right: 20px; /* Ajoutez un espacement entre les éléments du menu */
+}
+
+/* Si vous souhaitez supprimer les puces de la liste du menu, ajoutez également ces styles */
+nav[role=navigation] ul li:before {
+  content: none;
+}
+
+/* Titre H1 PHOTOGRAPHE EVENT */
+h1 {
+  position: absolute;
+  top: 315px;
+  left: 150px;
+  z-index: 2;
+  font-family: Space Mono;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  color: transparent !important;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: white;
+}
+
+/* Footer Menu */
+.footer-menu-list {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-right: 60px;
+  font-family: Space Mono;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  list-style-type: none;
+}
+
+.footer-menu-list a {
+  margin-left: 50px;
+  text-decoration: none;
+  color: #000;
+}/*# sourceMappingURL=style.css.map */

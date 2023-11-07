@@ -1,5 +1,11 @@
 <?php
 
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+function theme_enqueue_styles() {
+ wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css' );
+ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/script.js', array('jquery'), '1.0', true);
+}
+
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
 
@@ -60,3 +66,15 @@ function themeperso_settings_register() {
 add_action('admin_menu', 'themeperso_add_admin_pages', 10);   
 add_action('admin_init', 'themeperso_settings_register');
 
+
+// Emplacement de Menus Header et Footer
+
+function register_my_menu() {
+    register_nav_menu( 'main-menu', __( 'Menu principal', 'text-domain' ) );
+}
+add_action( 'after_setup_theme', 'register_my_menu' );
+
+function custom_footer_menu() {
+    register_nav_menu('footer-menu',__( 'Footer Menu' ));
+}
+add_action( 'init', 'custom_footer_menu' );
