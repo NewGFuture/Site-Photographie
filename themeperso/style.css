@@ -6,42 +6,56 @@
  Author URI:   https://elementor.com
  Version:      1.0.0
 */
-.logo {
-  float: left; /* Alignez le logo à gauche */
-  margin-right: 20px; /* Ajoutez un espacement à droite du logo si nécessaire */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  width: 100vw;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: #ffffff;
+  color: #000;
+  padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .logo img {
-  margin-left: 175px;
-  margin-top: 15px;
-}
-
-.main-menu {
-  float: left;
-}
-
-.menu {
-  position: fixed;
-  top: 0px;
-}
-
-.admin-bar .menu {
-  top: 35px; /* on prend en compte le décalage */
-  right: 150px;
-}
-
-/* Logo */
-.site-branding {
   position: absolute;
-  margin-top: 9px;
-  margin-left: 500px;
+  top: 70px;
+  left: 34%;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
 }
 
-/* Menu */
-/* Styles pour aligner le menu à droite */
-nav[role=navigation] {
-  margin-top: 50px;
-  margin-left: 58%;
+nav ul {
+  margin-top: 23px;
+  margin-right: 250px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
   font-family: Space Mono;
   font-size: 16px;
   font-style: normal;
@@ -50,32 +64,96 @@ nav[role=navigation] {
   text-transform: uppercase;
 }
 
-nav[role=navigation] a {
-  text-decoration: none;
-  color: #000;
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black background */
 }
 
-/* Styles pour les éléments du menu */
-nav[role=navigation] ul {
-  list-style: none;
-  padding: 0;
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px 20px 50px;
+  width: 25%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
 
-nav[role=navigation] ul li {
-  display: inline-block;
-  margin-right: 20px; /* Ajoutez un espacement entre les éléments du menu */
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* Si vous souhaitez supprimer les puces de la liste du menu, ajoutez également ces styles */
-nav[role=navigation] ul li:before {
-  content: none;
+.close:hover {
+  color: black;
+}
+
+/* Style pour cacher le bouton */
+.hidden {
+  display: none;
+}
+
+/* Styles spécifiques pour le formulaire de contact */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 350px;
+}
+
+.modal-header h2 {
+  display: flex;
+  justify-content: center;
+}
+
+#contactForm label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+#contactForm button {
+  background-color: #C4C4C4;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+}
+
+#contactForm button:hover {
+  background-color: #E00000;
+}
+
+/* Image du Milieu */
+.elementor-widget-container {
+  position: relative;
+  bottom: 20px;
 }
 
 /* Titre H1 PHOTOGRAPHE EVENT */
 h1 {
   position: absolute;
-  top: 315px;
-  left: 150px;
+  top: 360px;
+  left: 180px;
   z-index: 2;
   font-family: Space Mono;
   font-style: italic;
@@ -85,14 +163,14 @@ h1 {
   color: transparent !important;
   -webkit-text-stroke: 2px;
   -webkit-text-stroke-color: white;
+  z-index: 1;
 }
 
-/* Footer Menu */
 .footer-menu-list {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin-right: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
   font-family: Space Mono;
   font-size: 16px;
   font-style: normal;
@@ -103,7 +181,26 @@ h1 {
 }
 
 .footer-menu-list a {
-  margin-left: 50px;
+  margin-left: 20px;
   text-decoration: none;
   color: #000;
+}
+
+/* Media queries pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+  .logo img {
+    margin-left: 10px;
+  }
+  nav ul {
+    margin-right: 10px;
+  }
+  nav ul li {
+    margin: 0 10px;
+  }
+  .footer-menu-list {
+    margin-right: 10px;
+  }
+  .footer-menu-list a {
+    margin-left: 10px;
+  }
 }/*# sourceMappingURL=style.css.map */
