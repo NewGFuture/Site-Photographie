@@ -1,4 +1,7 @@
 <?php wp_footer(); ?>
+<?php
+?>
+        
 <footer>
     <nav class="footer-menu">
         <?php
@@ -10,7 +13,9 @@
         ?>
     </nav>
 
+    
 <?php get_template_part('template-parts/modal');?>
+
 </footer>
 </body>
 </html>

@@ -10,7 +10,11 @@ while (have_posts()) :
 endwhile;
 ?>
 
-    
 
+
+<main>
+
+<?php get_template_part('template-parts/single-evenement');?>
+</main>
 
 <?php get_footer(); ?>

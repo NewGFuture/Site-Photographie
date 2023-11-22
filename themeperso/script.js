@@ -1,47 +1,57 @@
-// modal.js
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the modal
+    // Récupérer la modale
     var modal = document.getElementById('myModal');
 
-    // Show the modal
-    modal.style.display = "block";
-
-    // Get the <span> element that closes the modal
+    // Récupérer l'élément <span> qui ferme la modale
     var span = document.getElementsByClassName("close")[0];
 
-    // When the user clicks on <span> (x), close the modal
+    // Lorsque l'utilisateur clique sur <span> (x), fermer la modale
     span.onclick = function() {
         modal.style.display = "none";
     }
 
-    // When the user clicks anywhere outside of the modal, close it
+    // Lorsque l'utilisateur clique n'importe où en dehors de la modale, la fermer
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
-    // Get the form
+
+    // Récupérer le bouton dans le menu par sa classe
+    var contactButton = document.querySelector('.menu-contact');
+
+    // Handle click on the button
+    contactButton.addEventListener('click', function(event) {
+        event.preventDefault();    
+            // Afficher la modale
+            modal.style.display = "block";
+        // Préremplir automatiquement le champ "RÉF" (remplacez la valeur par celle que vous souhaitez)
+        var champRef = document.getElementById('refPhoto');
+        champRef.value = "Valeur automatique"; // Remplacez par la valeur souhaitée ou générez-la dynamiquement
+    });
+
+    // Récupérer le formulaire
     var contactForm = document.getElementById('contactForm');
 
-    // Handle form submission
+    // Gérer la soumission du formulaire
     contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); // Empêcher la soumission par défaut du formulaire
 
-        // You can add your form submission logic here
-        // For example, you can use Fetch API to send the form data to a server
-        // Replace the URL with the actual endpoint to handle the form submission
-        fetch('your-server-endpoint', {
+        // Vous pouvez ajouter votre logique de soumission du formulaire ici
+        // Par exemple, vous pouvez utiliser l'API Fetch pour envoyer les données du formulaire à un serveur
+        // Remplacez l'URL par le véritable point d'extrémité pour gérer la soumission du formulaire
+        fetch('votre-point-dextremite', {
             method: 'POST',
             body: new FormData(contactForm),
         })
         .then(response => response.json())
         .then(data => {
-            // Handle the response from the server (success or error)
+            // Gérer la réponse du serveur (succès ou erreur)
             console.log(data);
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.error('Erreur :', error);
         });
     });
 });
+

@@ -1,10 +1,19 @@
 <?php
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+function theme_enqueue_scripts() {
+    // Enregistrez jQuery depuis le CDN de Google
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', array(), '3.5.1', true);
+    // Autres scripts en file d'attente ici
+}
+
 function theme_enqueue_styles() {
  wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css' );
  wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/script.js', array('jquery'), '1.0', true);
 }
+
+
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
